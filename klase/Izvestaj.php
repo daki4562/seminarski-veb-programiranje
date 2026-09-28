@@ -18,7 +18,7 @@ class Izvestaj extends BaznaKlasa {
      * Dohvataju se svi izveštaji iz baze podataka.
      */
     public function dohvatiSve() {
-        $sql = "SELECT * FROM {$this->tabela} ORDER BY datum_intervencije DESC";
+        $sql = "SELECT * FROM v_izvestaji_sa_majstorima ORDER BY datum_intervencije DESC";
         $rezultat = $this->konekcija->query($sql);
         return $rezultat->fetch_all(MYSQLI_ASSOC);
     }
@@ -250,6 +250,22 @@ class Izvestaj extends BaznaKlasa {
         $red = $rezultat->fetch_assoc();
         
         return $red['broj'] > 0;
+    }
+
+    /**
+     * Vraca statistiku izveštaja po majstorima (KORIŠĆENJE VIEW-a)
+     */
+    public function dohvatiStatistikuMajstora() {
+        $upit = "SELECT * FROM v_statistika_majstora ORDER BY broj_izvestaja DESC";
+        $stmt = $this->konekcija->prepare($upit);
+        $stmt->execute();
+        $rezultat = $stmt->get_result();
+        
+        $statistika = [];
+        while($red = $rezultat->fetch_assoc()){
+            $statistika[] = $red;
+        }
+        return $statistika;
     }
 }
 ?>

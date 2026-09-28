@@ -42,7 +42,37 @@ require_once __DIR__ . '/../ukljuci/zaglavlje.php';
     </div>
 </div>
 
-
+<h3 style="margin-top: 40px; margin-bottom: 15px;">Statistika učinka majstora (Podaci iz VIEW)</h3>
+<div style="overflow-x: auto; max-width: 800px;">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Majstor (Ime i prezime)</th>
+                <th>Ukupno evidentiranih izveštaja</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            // Direktno koriscenje pogleda
+            $statistika = $izvestajModel->dohvatiStatistikuMajstora();
+            if (count($statistika) > 0): 
+                foreach ($statistika as $stat): 
+            ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($stat['ime'] . ' ' . $stat['prezime']); ?></td>
+                    <td><strong style="color: #2e7d32;"><?php echo htmlspecialchars($stat['broj_izvestaja']); ?></strong></td>
+                </tr>
+            <?php 
+                endforeach; 
+            else: 
+            ?>
+                <tr>
+                    <td colspan="2" style="text-align: center;">Nema dovoljno podataka za statistiku.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
 require_once __DIR__ . '/../ukljuci/podnozje.php';
