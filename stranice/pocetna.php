@@ -32,7 +32,7 @@ require_once __DIR__ . '/../ukljuci/zaglavlje.php';
     <div class="kartica">
         <h3>Zaposleni majstori</h3>
         <p><?php echo $brojMajstora; ?></p>
-        <a href="#" class="btn btn-sivo">Pregled majstora</a>
+        <a href="majstor_lista.php" class="btn btn-sivo">Pregled majstora</a>
     </div>
 
     <div class="kartica">
