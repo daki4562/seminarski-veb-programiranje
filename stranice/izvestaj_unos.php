@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($podaci['adresa_preduzeca'])) {
         $greske[] = "Adresa preduzeća je obavezna.";
     }
-    if (empty($podaci['telefon_preduzeca']) || !preg_match('/^[0-9+\-\/\s]+$/', $podaci['telefon_preduzeca'])) {
+    if (empty($podaci['telefon_preduzeca']) || !preg_match('/^[0-9+\-\s]+$/', $podaci['telefon_preduzeca'])) {
         $greske[] = "Telefon je obavezan i mora biti u ispravnom formatu.";
     }
     if (empty($podaci['email_preduzeca']) || strpos($podaci['email_preduzeca'], '@') === false) {

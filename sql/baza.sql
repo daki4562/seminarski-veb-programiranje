@@ -37,9 +37,9 @@ CREATE TABLE `majstor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `majstor` (`ime`, `prezime`, `telefon`, `specijalnost`) VALUES
-('Jovan', 'Jovanovic', '061/111-2222', 'Vodoinstalater'),
-('Nikola', 'Nikolic', '062/333-4444', 'Elektricar'),
-('Milan', 'Milanovic', '063/555-6666', 'Stolar');
+('Jovan', 'Jovanovic', '061-111-2222', 'Vodoinstalater'),
+('Nikola', 'Nikolic', '062-333-4444', 'Elektricar'),
+('Milan', 'Milanovic', '063-555-6666', 'Stolar');
 
 -- --------------------------------------------------------
 -- Tabela: izvestaj (Celina/Master)
@@ -63,9 +63,9 @@ CREATE TABLE `izvestaj` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `izvestaj` (`naziv_preduzeca`, `adresa_preduzeca`, `telefon_preduzeca`, `email_preduzeca`, `pib`, `broj_izvestaja`, `datum_radnog_naloga`, `broj_radnog_naloga`, `datum_intervencije`, `adresa_stana`, `opis_kvara`, `majstor_id`) VALUES
-('Stambeno doo', 'Bulevar Oslobodjenja 1', '011/123-456', 'office@stambeno.rs', '101112223', 'IZV-2023-01', '2023-10-01', 'RN-001', '2023-10-02', 'Dunavska 15', 'Curenje vode u kupatilu', 1),
-('Gradsko Zelenilo', 'Maksima Gorkog 2', '021/987-654', 'info@zelenilo.rs', '102223334', 'IZV-2023-02', '2023-10-05', 'RN-002', '2023-10-06', 'Futoski put 50', 'Ne rade uticnice u kuhinji', 2),
-('Odrzavanje doo', 'Cara Dusana 3', '011/555-111', 'kontakt@odrzavanje.rs', '103334445', 'IZV-2023-03', '2023-10-10', 'RN-003', '2023-10-11', 'Lomana 10', 'Slomljena vrata na kuhinjskom elementu', 3);
+('Stambeno doo', 'Bulevar Oslobodjenja 1', '011-123-456', 'office@stambeno.rs', '101112223', 'IZV-2023-01', '2023-10-01', 'RN-001', '2023-10-02', 'Dunavska 15', 'Curenje vode u kupatilu', 1),
+('Gradsko Zelenilo', 'Maksima Gorkog 2', '021-987-654', 'info@zelenilo.rs', '102223334', 'IZV-2023-02', '2023-10-05', 'RN-002', '2023-10-06', 'Futoski put 50', 'Ne rade uticnice u kuhinji', 2),
+('Odrzavanje doo', 'Cara Dusana 3', '011-555-111', 'kontakt@odrzavanje.rs', '103334445', 'IZV-2023-03', '2023-10-10', 'RN-003', '2023-10-11', 'Lomana 10', 'Slomljena vrata na kuhinjskom elementu', 3);
 
 -- --------------------------------------------------------
 -- Tabela: intervencija (Deo/Detail)
