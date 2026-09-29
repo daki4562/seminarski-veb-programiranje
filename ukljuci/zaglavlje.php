@@ -16,6 +16,7 @@
                 <li><a href="pocetna.php">Početna</a></li>
                 <li><a href="izvestaj_lista.php">Izveštaji</a></li>
                 <li><a href="izvestaj_unos.php">Novi izveštaj</a></li>
+                <li><a href="korisnik_lista.php">Korisnici</a></li>
             </ul>
             <div class="nav-korisnik">
                 Dobrodošli, <strong><?php echo htmlspecialchars($_SESSION['korisnicko_ime'] ?? 'Korisnik'); ?></strong>
